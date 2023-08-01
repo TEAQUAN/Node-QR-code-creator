@@ -9,8 +9,8 @@ inquirer.prompt([
         type: 'input'
     }])
     .then(function (answers) {
-        const qr_svg = qr.image(answers['Link to your website'], { type: 'svg' });
-        qr_svg.pipe(fs.createWriteStream('i_love_qr.svg'));
+        const qr_svg = qr.image(answers['Link to your website']);
+        qr_svg.pipe(fs.createWriteStream('i_love_qr.png'));
         console.log('QR code generated and saved as i_love_qr.svg');
     });
 
